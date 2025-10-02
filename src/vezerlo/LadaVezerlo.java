@@ -12,6 +12,7 @@ public class LadaVezerlo {
     public LadaVezerlo(LadaModell modell, LadaNezet nezet) {
         this.modell = modell;
         this.nezet = nezet;
+        nezet.setVisible(true);
     }
     
     public void feladat(){
