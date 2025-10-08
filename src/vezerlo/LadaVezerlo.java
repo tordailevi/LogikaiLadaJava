@@ -21,6 +21,19 @@ public class LadaVezerlo {
                 + "A bronz láda azt állítja, hogy 'Az arany láda hazudik!'\nViszont csak az egyik láda mond igazat!", "Játék lényege",1);
         nezet.setVisible(true);
     }
+
+    public static String valasztottEredmeny(String valasztott) {
+        if ("Ezüst".equalsIgnoreCase(valasztott) || "2".equals(valasztott)) {
+            return "Gratulálunk, megtaláltad a kincset az ezüst ládában!";
+        } else if ("Arany".equalsIgnoreCase(valasztott) || "1".equals(valasztott) ||
+                   "Bronz".equalsIgnoreCase(valasztott) || "3".equals(valasztott)) {
+            return "Sajnos nem nyert, próbáld újra!";
+        } else {
+            return "Érvénytelen választás!";
+        }
+    }
+
+
     
     public void feladat(){
 
