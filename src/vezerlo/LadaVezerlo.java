@@ -1,5 +1,9 @@
 package vezerlo;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Locale;
+import javax.swing.ButtonModel;
 import javax.swing.JOptionPane;
 import modell.LadaModell;
 import nezet.LadaNezet;
@@ -19,6 +23,43 @@ public class LadaVezerlo {
     }
     
     public void feladat(){
-        
-    }
+
+    nezet.getjButton1().addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+    if (nezet.getjRadioButton2().isSelected()) {
+        JOptionPane.showMessageDialog(null, "Helyes válasz!", "Eredmény",2);
+    } else if (nezet.getjRadioButton1().isSelected() || nezet.getjRadioButton3().isSelected()) {
+    JOptionPane.showMessageDialog(null, "Rossz megoldás!", "Eredmény", JOptionPane.ERROR_MESSAGE);
+    } else {
+    JOptionPane.showMessageDialog(null, "Válassz egy lehetőséget!", "Figyelmeztetés", JOptionPane.WARNING_MESSAGE);
 }
+}
+});
+        /*System.out.println(nezet.GombValaszto());
+        if (aPusztito() == "Ezüst") {
+            JOptionPane.showMessageDialog(null, "Helyes válasz!", "Eredmény",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Rossz válasz!", "Eredmény",2);
+        }*/
+    }
+    
+    
+    //teszteld a pusztítót ha mered ✌️
+    /*public String aPusztito(){
+            if (nezet.getjRadioButton1().isSelected()) {
+                return nezet.getjRadioButton1().getActionCommand();
+            
+            }else if (nezet.getjRadioButton2().isSelected()) {
+                return nezet.getjRadioButton2().getActionCommand();
+            
+            }else if (nezet.getjRadioButton3().isSelected()){
+                return nezet.getjRadioButton3().getActionCommand();
+            }else{
+                return " ";
+            }
+        }*/
+    }
+    
+
+
