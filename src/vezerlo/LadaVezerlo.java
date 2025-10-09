@@ -12,7 +12,7 @@ public class LadaVezerlo {
 
     private LadaModell modell;
     private LadaNezet nezet;
-           
+    
     
     public LadaVezerlo(LadaModell modell, LadaNezet nezet) {
         this.modell = modell;

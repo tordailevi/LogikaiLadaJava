@@ -6,41 +6,32 @@ import vezerlo.LadaVezerlo;
 
 public class LadaValasztasTest {
         public static void main(String[] args) {
-            tesztHelyesValasztas();
-            tesztAranyValasztas();
-            tesztBronzValasztas();
-            tesztSzovegVsSzam();
+            tesztLadaVisszajelzes();
+            tesztSzovegSzamHelyettEsForditva();
             TesztMindenLadanFelirat();
             TesztNemLetezoLada();
     }
         
-    public static void tesztHelyesValasztas() {
+        
+    public static void tesztLadaVisszajelzes(){
         //Levi
-        String eredmeny = LadaVezerlo.valasztottEredmeny("Ezüst");
-        assert eredmeny.contains("Gratulálunk") : "HIBA: Helyes válasznál nem kaptunk gratulációt!";
+        String eredmenyEzust = LadaVezerlo.valasztottEredmeny("Ezüst");
+        assert eredmenyEzust.contains("Gratulálunk") : "HIBA: Helyes válasznál nem gratulál!";
+        
+        String eredmenyArany = LadaVezerlo.valasztottEredmeny("Arany");
+        assert eredmenyArany.equals("Nem nyert, próbáld újra!") : "HIBA: Rossz válasznál nem a megfelelő üzenetet kapjuk!";
+        
+        String eredmenyBronz = LadaVezerlo.valasztottEredmeny("Bronz");
+        assert eredmenyBronz.equals("Nem nyert, próbáld újra!") : "HIBA: Rossz válasznál nem a megfelelő üzenetet kapjuk!";
     }
 
-    public static void tesztAranyValasztas() {
-        //Levi
-        String eredmeny = LadaVezerlo.valasztottEredmeny("Arany");
-        assert eredmeny.equals("Nem nyert, próbáld újra!") 
-            : "HIBA: Rossz válasznál nem a megfelelő üzenetet kaptuk!";
-    }
-    
-    public static void tesztBronzValasztas() {
-        //Levi
-        String eredmeny = LadaVezerlo.valasztottEredmeny("Bronz");
-        assert eredmeny.equals("Nem nyert, próbáld újra!") 
-            : "HIBA: Rossz válasznál nem a megfelelő üzenetet kaptuk!";
-    }
-
-    public static void tesztSzovegVsSzam() {
+    public static void tesztSzovegSzamHelyettEsForditva() {
         //Levi
         String eredmeny1 = LadaVezerlo.valasztottEredmeny("2");
         assert eredmeny1.contains("Gratulálunk") : "HIBA: '2' esetén is ezüstöt kéne találni!";
 
         String eredmeny2 = LadaVezerlo.valasztottEredmeny("Bronz");
-        assert eredmeny2.contains("Sajnos") : "HIBA: 'Bronz' esetén rossz eredményt kaptunk!";
+        assert eredmeny2.equals("Nem nyert, próbáld újra!") : "HIBA: 'Bronz' esetén rossz eredményt kaptunk!";
     }
     
     public static void TesztMindenLadanFelirat() {
@@ -53,7 +44,7 @@ public class LadaValasztasTest {
         assert lada2.getFelirat() != null && !lada2.getFelirat().isEmpty() : "lada2 felirata hiányzik!";
         assert lada3.getFelirat() != null && !lada3.getFelirat().isEmpty() : "lada3 felirata hiányzik!";
 
-        System.out.println("1. teszt sikeres: minden lada van felirat.");
+        System.out.println("1. teszt sikeres: minden láda van felirat.");
     }
     
     
@@ -62,10 +53,10 @@ public class LadaValasztasTest {
         LadaModell nemLetezoLada = null;
 
         try {
-            assert nemLetezoLada != null : "Nem letezo ladara hivatkozko!";
-            System.out.println("Hiba: nem letezo ládát tudtam hasznalni.");
+            assert nemLetezoLada != null : "Nem létező ládára hivatkozott!";
+            System.out.println("Hiba: Nem létező ládát tudtam haszználni.");
         } catch (AssertionError e) {
-            System.out.println("2. teszt sikeres: nem letezo ladara hivatkozás jol kezelvre.");
+            System.out.println("2. teszt sikeres: nem létező ládára hivatkozás jól kezelve.");
         }
 
         System.out.println("Minden teszt lefutott.");
