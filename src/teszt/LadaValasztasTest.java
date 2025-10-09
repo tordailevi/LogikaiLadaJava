@@ -1,11 +1,17 @@
-
 package teszt;
 
 import modell.LadaModell;
+import nezet.LadaNezet;
 import vezerlo.LadaVezerlo;
 
 public class LadaValasztasTest {
-        public static void main(String[] args) {
+    
+    
+    private static LadaVezerlo ladaVezerlo;
+    
+        public void main(String[] args) {
+            
+            
             tesztHelyesValasztas();
             tesztAranyValasztas();
             tesztBronzValasztas();
@@ -45,9 +51,11 @@ public class LadaValasztasTest {
     
     public static void TesztMindenLadanFelirat() {
         //Milán
-        LadaModell lada1 = new LadaModell("piros", "Nagyon szep");
-        LadaModell lada2 = new LadaModell("barna", "szaros lada");
-        LadaModell lada3 = new LadaModell();
+        LadaModell lada1 = LadaVezerlo.getModell1();
+        LadaModell lada2 = LadaVezerlo.getModell2();
+        LadaModell lada3 = LadaVezerlo.getModell3();
+        
+        
 
         assert lada1.getFelirat() != null && !lada1.getFelirat().isEmpty() : "lada1 felirata hiányzik!";
         assert lada2.getFelirat() != null && !lada2.getFelirat().isEmpty() : "lada2 felirata hiányzik!";
