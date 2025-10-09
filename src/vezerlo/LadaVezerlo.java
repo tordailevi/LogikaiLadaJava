@@ -59,12 +59,6 @@ public class LadaVezerlo {
 }
 }
 });
-        /*System.out.println(nezet.GombValaszto());
-        if (aPusztito() == "Ezüst") {
-            JOptionPane.showMessageDialog(null, "Helyes válasz!", "Eredmény",2);
-        }else{
-            JOptionPane.showMessageDialog(null, "Rossz válasz!", "Eredmény",2);
-        }*/
     }
     
     public LadaModell getModell1() {
@@ -76,22 +70,6 @@ public class LadaVezerlo {
     public LadaModell getModell3() {
         return modell3; 
     }
-    
-    
-    //teszteld a pusztítót ha mered ✌️
-    /*public String aPusztito(){
-            if (nezet.getjRadioButton1().isSelected()) {
-                return nezet.getjRadioButton1().getActionCommand();
-            
-            }else if (nezet.getjRadioButton2().isSelected()) {
-                return nezet.getjRadioButton2().getActionCommand();
-            
-            }else if (nezet.getjRadioButton3().isSelected()){
-                return nezet.getjRadioButton3().getActionCommand();
-            }else{
-                return " ";
-            }
-        }*/
     }
     
 
