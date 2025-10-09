@@ -27,7 +27,7 @@ public class LadaVezerlo {
             return "Gratulálunk, megtaláltad a kincset az ezüst ládában!";
         } else if ("Arany".equalsIgnoreCase(valasztott) || "1".equals(valasztott) ||
                    "Bronz".equalsIgnoreCase(valasztott) || "3".equals(valasztott)) {
-            return "Sajnos nem nyert, próbáld újra!";
+            return "Nem nyert, próbáld újra!";
         } else {
             return "Érvénytelen választás!";
         }
